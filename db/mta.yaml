@@ -1,0 +1,21 @@
+_schema-version: "2.1"
+ID: ##PROJECT-NAME##
+version: 0.0.1
+modules:
+- name: ##PROJECT-NAME##-db
+  type: hdb
+  path: .
+  requires:
+  - name: hdi_db
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+resources:
+- name: hdi_db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service-name: ##PROJECT-NAME##
+    config:
+      schema: ##PROJECT-NAME##
+      makeUniqueName: false
+  properties:
+    hdi-container-name: ${service-name}

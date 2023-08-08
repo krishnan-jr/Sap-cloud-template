@@ -1,0 +1,11 @@
+{
+    "welcomeFile": "./portal/webapp/index.html",
+    "authenticationMethod": "route",
+    "routes": [
+        {
+            "source": "^/portal/(.*)",
+            "authenticationType": "none",
+            "localDir": "web"
+        }
+    ]
+}

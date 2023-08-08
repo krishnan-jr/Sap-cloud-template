@@ -1,0 +1,31 @@
+{
+    "xsappname": "##PROJECT-NAME##",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.##PROJECT-NAME##User",
+            "description": "##PROJECT-NAME## User"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "##PROJECT-NAME##User",
+            "description": "User role for ##PROJECT-NAME##",
+            "scope-references": [
+                "$XSAPPNAME.##PROJECT-NAME##User"
+            ]
+        }
+    ],
+    "role-collections": [
+        {
+            "name": "##PROJECT-NAME##_User",
+            "description": "User access for ##PROJECT-NAME##",
+            "role-template-references": [
+                "$XSAPPNAME.##PROJECT-NAME##User"
+            ]
+        }
+    ],
+    "authorities": [
+        "$ACCEPT_GRANTED_AUTHORITIES"
+    ]
+}
